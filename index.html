@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dictionary App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 My Dictionary App</h1>
+            <p>Look up definitions, phonetics, and examples for any word</p>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="wordInput" placeholder="Enter a word to search..." autocomplete="off">
+            <button id="searchBtn">🔍 Search</button>
+        </div>
+        
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Searching...</p>
+        </div>
+        
+        <div id="error" class="error hidden">
+            <h3>Word not found</h3>
+            <p>Please check the spelling and try again.</p>
+        </div>
+        
+        <div id="results" class="results hidden">
+            <div class="word-header">
+                <h2 id="word"></h2>
+                <button id="audioBtn" class="audio-btn hidden">🔊 Play</button>
+            </div>
+            
+            <div id="phonetic" class="phonetic"></div>
+            
+            <div id="meanings" class="meanings"></div>
+            
+            <div id="etymology" class="etymology hidden">
+                <h4>Etymology</h4>
+                <p id="etymologyText"></p>
+            </div>
+        </div>
+        
+        <div class="recent-searches">
+            <h3>Recent Searches</h3>
+            <div id="recentList" class="recent-list"></div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Powered by <a href="https://dictionaryapi.dev/" target="_blank">Free Dictionary API</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
