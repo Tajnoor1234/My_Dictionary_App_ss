@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #5a67d8;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#wordInput {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+#wordInput:focus {
+    border-color: #5a67d8;
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+}
+
+#searchBtn {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    background: #5a67d8;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+#searchBtn:hover {
+    background: #4c51bf;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(90, 103, 216, 0.3);
+}
+
+.loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-left: 4px solid #5a67d8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error {
+    text-align: center;
+    padding: 30px;
+    background: #fed7d7;
+    border-radius: 15px;
+    border-left: 5px solid #f56565;
+}
+
+.error h3 {
+    color: #c53030;
+    margin-bottom: 10px;
+}
+
+.error p {
+    color: #742a2a;
+}
+
+.results {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.word-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.word-header h2 {
+    color: #2d3748;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.audio-btn {
+    padding: 8px 15px;
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.audio-btn:hover {
+    background: #38a169;
+    transform: scale(1.05);
+}
+
+.phonetic {
+    font-size: 1.2rem;
+    color: #718096;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.meaning {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border-left: 4px solid #5a67d8;
+}
+
+.part-of-speech {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #5a67d8;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.definition {
+    margin-bottom: 15px;
+}
+
+.definition-text {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.example {
+    font-style: italic;
+    color: #666;
+    padding: 8px 15px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 3px solid #e2e8f0;
+}
+
+.synonyms, .antonyms {
+    margin-top: 10px;
+}
+
+.synonyms h5, .antonyms h5 {
+    color: #4a5568;
+    margin-bottom: 5px;
+}
+
+.synonym-list, .antonym-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.synonym, .antonym {
+    background: #edf2f7;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.etymology {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e6fffa;
+    border-radius: 10px;
+    border-left: 4px solid #38b2ac;
+}
+
+.etymology h4 {
+    color: #2c7a7b;
+    margin-bottom: 8px;
+}
+
+.recent-searches {
+    margin-top: 30px;
+}
+
+.recent-searches h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.recent-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.recent-item {
+    background: #e2e8f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.recent-item:hover {
+    background: #cbd5e0;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    #wordInput {
+        min-width: 100%;
+    }
+    
+    .word-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .word-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .meaning {
+        padding: 15px;
+    }
+    
+    .results {
+        padding: 20px;
+    }
+}
